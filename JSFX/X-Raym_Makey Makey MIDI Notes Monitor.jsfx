@@ -1,0 +1,127 @@
+/**
+ * JSFX Name: Makey Makey MIDI Notes Monitor
+ * Description: Monitor Makey Makey Inputs.
+ * About:
+    Based on MineMooder Makey Makey MIDI controller Instructables Tutorial.
+     Place it first on your FX chain.
+ * Screenshot:
+ * Author: X-Raym
+ * Author URI: http://www.extremraym.com
+ * Links:
+     MineMooder Makey Makey MIDI controller Instructables Tutorial http://www.instructables.com/id/Makey-Makey-MIDI-controller/
+     Forum Thread
+ * Donation: http://www.extremraym.com/en/donation
+ * Licence: GPL v3
+ * REAPER: 5.0
+ * Extensions: None
+ * Version: 1.0
+ */
+
+/**
+ * Changelog:
+ * v1.0 (2016-09-02)
+  + Initial Release
+ */
+
+desc:Makey Makey MIDI Notes Monitor
+
+slider1:0<0,16,1{Any,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}>Input Channel
+
+slider10:0<0,1,{---,ON}>Up
+slider11:0<0,1,{---,ON}>Down
+slider12:0<0,1,{---,ON}>Left
+slider13:0<0,1,{---,ON}>Right
+slider14:0<0,1,{---,ON}>Space
+slider15:0<0,1,{---,ON}>Click
+
+slider30:0<0,1,{---,ON}>W
+slider31:0<0,1,{---,ON}>A
+slider32:0<0,1,{---,ON}>S
+slider33:0<0,1,{---,ON}>D
+slider34:0<0,1,{---,ON}>F
+slider35:0<0,1,{---,ON}>G
+
+slider50:0<0,1,{---,ON}>A5 - Mouse Up
+slider51:0<0,1,{---,ON}>A4 - Mouse Down
+slider52:0<0,1,{---,ON}>A3 - Mouse Left
+slider53:0<0,1,{---,ON}>A2 - Mouse Right
+slider54:0<0,1,{---,ON}>A1 - Mouse Click Left
+slider55:0<0,1,{---,ON}>A0 - Mouse Click Right
+
+
+////////////////////////////////////////////////////////////////////////////////
+@init
+statNoteOn = $x90;
+statNoteOff = $x80;
+
+slider_dest = 0;
+
+slider_dest[60] = 10;
+slider_dest[61] = 11;
+slider_dest[62] = 12;
+slider_dest[63] = 13;
+slider_dest[64] = 14;
+slider_dest[65] = 15;
+slider_dest[66] = 30;
+slider_dest[67] = 31;
+slider_dest[68] = 32;
+slider_dest[69] = 33;
+slider_dest[70] = 34;
+slider_dest[71] = 35;
+slider_dest[72] = 50;
+slider_dest[73] = 51;
+slider_dest[74] = 52;
+slider_dest[75] = 53;
+slider_dest[76] = 54;
+slider_dest[77] = 55;
+
+////////////////////////////////////////////////////////////////////////////////
+@slider
+inChannel = slider1 - 1;
+
+////////////////////////////////////////////////////////////////////////////////
+@block
+
+while
+(
+
+  midirecv(offset,msg1,note,vel) ?
+  (
+    // Extract message type and channel
+    status = msg1 & $xF0;
+    channel = msg1 & $x0F;
+
+    // Is it on our channel?
+    channel == inChannel || inChannel == -1 ?
+    (
+      
+      // Is it a note event?
+      status == statNoteOn || status == statNoteOff ?
+      (
+
+        // If note is in Makey Makey MIDI Range
+        note >= 60 && note <= 77   ? (
+
+          // Create a Table based on sliders values
+          status == statNoteOn ?(
+            status_out = 1;
+          ):(
+            status_out = 0;
+          );
+        
+          slider(slider_dest[note]) = status_out;
+          sliderchange( (slider_dest[note] ));  
+         
+        );
+
+      );
+
+    );
+
+    midisend(offset,msg1,note,vel); // Not a note, pass thru
+
+    1; // Force loop to continue until all messages have been processed
+
+  );
+
+);
