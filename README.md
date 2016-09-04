@@ -2,7 +2,7 @@
 
 ## Concept
 
-Turn Makey Makey into MIDI Controller.
+Turn [Makey Makey](http://makeymakey.com) into MIDI Controller.
 
 Mod the Makey Makey firmware so that it sends MIDI Note signals instead of keyboard keys signals.  
 Use JSFX Effects to map this signal inside a DAW or VST Host without re-changing the Makey Makey firmware.
