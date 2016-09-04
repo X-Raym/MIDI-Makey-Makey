@@ -50,8 +50,66 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 Based on MineMooder Makey Makey MIDI controller Instructables Tutorial.\\par\} \} ]]]]><![CDATA[> http://www.extremraym.com/en/donation    https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Map.jsfx     http://www.extremraym.com/en/donation    https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Monitor.jsfx     http://www.extremraym.com/en/donation    https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Velocity.jsfx     <![CDATA[\{\\rtf1\\ansi\\deff0\{\\fonttbl\{\\f0 \\fswiss Helvetica;\}\{\\f1 Courier;\}\} \{\\colortbl;\\red255\\green0\\blue0;\\red0\\green0\\blue255;\} \\widowctrl\\hyphauto\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 \{\\pard \\ql \\f0 \\sa180 \\li0 \\fi0 Based on MineMooder Makey Makey MIDI controller Instructables Tutorial.\\par\} \} ]]]]]]><![CDATA[> http://www.extremraym.com/en/donation https://github.com/X-Raym/MIDI-Makey-Makey  \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI-Makey-Makey\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Concept\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Turn Makey Makey into MIDI Controller.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Mod the Makey Makey firmware so that it sends MIDI Note signals instead of keyboard keys signals.\line Use JSFX Effects to map this signal inside a DAW or VST Host without re-changing the Makey Makey firmware.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Pack Content\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Core Files\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Makey Makey MIDI Firmware mod (better for JSFX integration)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab JSFX Effects for MIDI Routing inside a DAW or VST Host.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Extra Files\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 These files are hosted here for convenience.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Makey Makey MIDI Firmware original, by MineMooder (for reference)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Firmware and Data Serialization\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Follow MineMooder Instructables Tutorial {\field{\*\fldinst{HYPERLINK "http://www.instructables.com/id/Makey-Makey-MIDI-controller/"}}{\fldrslt{\ul
+Makey Makey MIDI controller
+}}}
+, but use the {\b X-Raym_Makey-Makey-midicontroller_mod.ino} firmware from this repo instead of the one from the tutorial.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 JSFX\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Cockos JSFX effects are effects in a script format, which allow quick development and maintenance.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Cockos'DAW {\field{\*\fldinst{HYPERLINK "http://www.reaper.fm"}}{\fldrslt{\ul
+REAPER
+}}}
+ handle them natively, but they can be embeded in other DAW or VST host for free with Cockos {\field{\*\fldinst{HYPERLINK "http://reaper.fm/reaplugs/"}}{\fldrslt{\ul
+ReaPlugs ReaJS
+}}}
+ VST plugin.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs24 REAPER\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You can import the JSFX with {\field{\*\fldinst{HYPERLINK "http://www.reapack.com/"}}{\fldrslt{\ul
+ReaPack
+}}}
+.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Install ReaPack\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Copy the URL {\f1 https://github.com/X-Raym/MIDI-Makey-Makey/raw/master/index.xml}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Open REAPER\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\i Extension} Menu > {\i ReaPack} > {\i Import Repository} > Paste the URL\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab Synchronize Package\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab JSFX should be avaible in your FX list!\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs24 Other DAW and VST Host\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Download Install ReaPlugs ReaJS\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Download JSFX from this repo\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Open ReaJS in your VST Host\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Import JSFX\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab Enjoy!\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Notes\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Other JSFX, included in REAPER or from online repositories, can be especially useful for Makey Makey MIDI workflow:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\i Fixed MIDI Note Length} (native), prevent too close notes to be sent. Useful to avoid indesired quick note repetions.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\i X-Raym_MIDI Note to CC} (from {\field{\*\fldinst{HYPERLINK "https://github.com/X-Raym/REAPER-ReaScripts"}}{\fldrslt{\ul
+X-Raym's REAPER-ReaScripts repo
+}}}
+), can help you map a MIDI Note to a MIDI CC event.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Backup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you want to restore Makey Makey default firmware, use the {\field{\*\fldinst{HYPERLINK "https://github.com/sparkfun/MaKeyMaKey/tree/master/firmware/Arduino/makey_makey"}}{\fldrslt{\ul
+Sparkfun firmware
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Donation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You can support this project on my {\field{\*\fldinst{HYPERLINK "http://www.extremraym.com/en/donation"}}{\fldrslt{\ul
+website
+}}}
+. Thanks!\par}
 }
 ]]></description>
     <link rel="donation">http://www.extremraym.com/en/donation</link>
