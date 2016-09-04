@@ -45,4 +45,7 @@
       </version>
     </reapack>
   </category>
+  <metadata>
+    <link rel="donation">http://www.extremraym.com/en/donation</link>
+  </metadata>
 </index>
