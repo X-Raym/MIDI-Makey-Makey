@@ -3,7 +3,6 @@ Original version by MineMooder for http://www.instructables.com/id/Makey-Makey-M
 Moded by X-Raym @http://www.extremraym.com
 Mod Changes:
 - Added Note Off message instead of Note On a velocity 0.
-- Root is C3 instead of C4.
 - Default velocity is 96.
 */
 
@@ -24,7 +23,7 @@ I think you are free to use this program. If it causes damage, that's not my fau
 ////////////////////////
 
 #define NUM_INPUTS       18    // 6 on the front + 12 on the back
-#define TARGET_LOOP_TIME 744  // (1/56 seconds) / 24 samples = 744 microseconds per sample 
+#define TARGET_LOOP_TIME 744  // (1/56 seconds) / 24 samples = 744 microseconds per sample
 
 // input status LED pin numbers
 const int inputLED_a = 9;
@@ -49,10 +48,10 @@ boolean pinChange[NUM_INPUTS] = {0,0,0,0,0,0,0,0,0,0,0,0};
 int pinState [NUM_INPUTS] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
 // This is the lowest note, you can change this note
-int note = 0x30; // This is C3
+//int note = 0x30; // This is C3 - 48
+int note = 0x3C; // This is C4 - 60
 
-
-void setup() 
+void setup()
 {
 
   Serial.begin(38400); // make sure your serial to midi converter reads at this speed
@@ -63,7 +62,7 @@ void setup()
   }
 
 // LED stuff
-  pinMode(inputLED_a, INPUT);  
+  pinMode(inputLED_a, INPUT);
   pinMode(inputLED_b, INPUT);
   pinMode(inputLED_c, INPUT);
   digitalWrite(inputLED_a, LOW);
@@ -82,9 +81,9 @@ void setup()
 
 void loop() {
 
-  // reading all input pins and sending out midi notes  
+  // reading all input pins and sending out midi notes
   for (int i=0; i<NUM_INPUTS; i++) {
-    
+
     (pinChange[i]) = (pinState[i]); // store previous pin states
 
     (pinState[i]) = (digitalRead(pinNumbers[i])); // get current pin states
@@ -98,7 +97,7 @@ void loop() {
       sendNote(msg, note + i, 96); // if pin state is changed, send midi note.
     }
   }
-  
+
   // this is LED stuff
   cycleLEDs();
   updateOutLEDs();
@@ -113,7 +112,7 @@ void loop() {
 void sendNote(int cmd, int pitch, int velocity) {
 
   // The midi message consists of three bytes: channel(in this case 1) , note (in this case 0x3C which is C3 plus a number between 0 and 18), velocity (which is max (0x7F) or zero, which turns the note off)
-  
+
   Serial.write(cmd);
   Serial.write(pitch);
   Serial.write(velocity);
@@ -222,7 +221,7 @@ void updateOutLEDs()
 {
   boolean somethingPlayingLeft = 0;
   boolean somethingPlayingRight = 0;
-  
+
   for (int i=0; i<NUM_INPUTS; i++)
   {
     if (!pinState[i] && i<12)
@@ -234,17 +233,17 @@ void updateOutLEDs()
     {
       somethingPlayingRight = 1;
 
-      } 
+      }
 
-  }   
-      
+  }
+
   if (somethingPlayingLeft)
   {
     TXLED1;
   }else{
     TXLED0;
-   } 
-  
+   }
+
   if (somethingPlayingRight)
   {
     RXLED1;
@@ -252,5 +251,3 @@ void updateOutLEDs()
     RXLED0;
   }
 }
-
-
