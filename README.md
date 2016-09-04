@@ -37,7 +37,7 @@ Cockos'DAW [REAPER](http://www.reaper.fm) handle them natively, but they can be 
 You can import the JSFX with [ReaPack](http://www.reapack.com/).
 
 1. Install ReaPack
-1. Copy the URL `https://raw.githubusercontent.com/X-Raym/REAPER-ReaScripts/master/index.xml`
+1. Copy the URL `https://raw.githubusercontent.com/X-Raym/MIDI-Makey-Makey/master/index.xml`
 1. Open REAPER
 1. *Extension* Menu > *ReaPack* > *Import Repository* > Paste the URL
 1. Synchronize Package
