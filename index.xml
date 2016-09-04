@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" commit="2d2a29f64ffce1806fd6541a8aa97fa13e1ea295" name="MIDI Makey Makey">
+  <category name="JSFX">
+    <reapack name="X-Raym_Makey Makey MIDI Notes Channel.jsfx" type="effect" desc="Makey Makey MIDI Notes Channel">
+      <metadata>
+        <link rel="donation">http://www.extremraym.com/en/donation</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="true">https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Channel.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Makey Makey MIDI Notes Map.jsfx" type="effect" desc="Makey Makey MIDI Notes Map">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Based on MineMooder Makey Makey MIDI controller Instructables Tutorial.\par}
+}
+]]></description>
+        <link rel="donation">http://www.extremraym.com/en/donation</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="true">https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Map.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Makey Makey MIDI Notes Monitor.jsfx" type="effect" desc="Makey Makey MIDI Notes Monitor">
+      <metadata>
+        <link rel="donation">http://www.extremraym.com/en/donation</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="true">https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Monitor.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Makey Makey MIDI Notes Velocity.jsfx" type="effect" desc="Makey Makey MIDI Notes Velocity">
+      <metadata>
+        <link rel="donation">http://www.extremraym.com/en/donation</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="true">https://github.com/X-Raym/MIDI-Makey-Makey/raw/2d2a29f64ffce1806fd6541a8aa97fa13e1ea295/JSFX/X-Raym_Makey%20Makey%20MIDI%20Notes%20Velocity.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+</index>
