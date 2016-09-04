@@ -1,8 +1,17 @@
+ /*
+Original version by MineMooder for http://www.instructables.com/id/Makey-Makey-MIDI-controller/.
+Moded by X-Raym @http://www.extremraym.com
+Mod Changes:
+- Added Note Off message instead of Note On a velocity 0.
+- Root is C3 instead of C4.
+- Default velocity is 96.
+*/
+
 /*
 This program is written for the makey makey ( http://www.makeymakey.com/ )
 This program is based on the original arduino code for makey makey, which can be found here: https://dlnmh9ip6v2uc.cloudfront.net/tutorialimages/MaKey_MaKey_QuickStart/makey_makey_1_4_1.zip
 In order for it to work you'll need this addon: https://dlnmh9ip6v2uc.cloudfront.net/tutorialimages/MaKey_MaKey_QuickStart/MaKeyMaKey-13-8-12.zip
-Instructions for instlling this addon can be found here: https://www.sparkfun.com/tutorials/388
+Instructions for installing this addon can be found here: https://www.sparkfun.com/tutorials/388
 The program send serial messages to your computer. These serial messages can be transformed into midi messages using a serial to midi converter like Hairless Midi ( http://projectgus.github.io/hairless-midiserial/ )
 Make sure you go to the preferences to change the baud speed to 38400 !!
 
@@ -40,7 +49,7 @@ boolean pinChange[NUM_INPUTS] = {0,0,0,0,0,0,0,0,0,0,0,0};
 int pinState [NUM_INPUTS] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
 // This is the lowest note, you can change this note
-int note = 0x3C; // This is C3
+int note = 0x30; // This is C3
 
 
 void setup() 
@@ -76,15 +85,20 @@ void loop() {
   // reading all input pins and sending out midi notes  
   for (int i=0; i<NUM_INPUTS; i++) {
     
-  (pinChange[i]) = (pinState[i]); // store previous pin states
+    (pinChange[i]) = (pinState[i]); // store previous pin states
 
-  (pinState[i]) = (digitalRead(pinNumbers[i])); // get current pin states
+    (pinState[i]) = (digitalRead(pinNumbers[i])); // get current pin states
 
-   if (pinChange[i]!= (pinState[i])){
-    noteOn(0x90, note + i, 0x7F*(!(pinState[i]))); // if pin state is changed, send midi note (notice that volume (0x7F = max) is multiplied by the inversion of the pinstate. Because of this we are sending note on AND note off messages)
+    if (pinChange[i]!= (pinState[i]) ) {
+      if ( pinState[i] == 0 ) {
+        msg = 0x90;
+       } else {
+        msg = 0x80;
+      }
+      sendNote(msg, note + i, 96); // if pin state is changed, send midi note.
+    }
   }
   
-}
   // this is LED stuff
   cycleLEDs();
   updateOutLEDs();
@@ -96,17 +110,15 @@ void loop() {
 // SENDING MIDI MESSAGE
 ///////////////////////////
 
-void noteOn(int cmd, int pitch, int velocity) {
+void sendNote(int cmd, int pitch, int velocity) {
 
-  // The midi message consists of three bytes: channel(in this case 1) , note (in this case 0x3C which is C3 plus a number between 0 and 18), velocity (which is max (0x7F) or zero, which turns the ote off)
+  // The midi message consists of three bytes: channel(in this case 1) , note (in this case 0x3C which is C3 plus a number between 0 and 18), velocity (which is max (0x7F) or zero, which turns the note off)
   
   Serial.write(cmd);
   Serial.write(pitch);
   Serial.write(velocity);
 
 }
-
-
 
 
 // THE REST OF THE CODE BELOW IS FOR TURNING THE LEDS ON THE MAKEY MAKEY ON AND OFF
