@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d900041b0375f068be69b5a67debb44ccb1c017d" name="X-Raym MIDI Makey Makey">
+<index version="1" commit="467d61cfdf051c3f857a59d94d0cdd98c6cc026b" name="X-Raym MIDI Makey Makey">
   <category name="JSFX">
     <reapack name="X-Raym_Makey Makey MIDI Notes Channel.jsfx" type="effect" desc="Makey Makey MIDI Notes Channel">
       <metadata>
+        <link rel="screenshot">https://youtu.be/Co3ttlSlMlY</link>
         <link rel="donation">http://www.extremraym.com/en/donation</link>
       </metadata>
       <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
@@ -19,6 +20,7 @@
 {\pard \ql \f0 \sa180 \li0 \fi0 Based on MineMooder Makey Makey MIDI controller Instructables Tutorial.\par}
 }
 ]]></description>
+        <link rel="screenshot">https://youtu.be/Co3ttlSlMlY</link>
         <link rel="donation">http://www.extremraym.com/en/donation</link>
       </metadata>
       <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
@@ -32,6 +34,7 @@
     </reapack>
     <reapack name="X-Raym_Makey Makey MIDI Notes Monitor.jsfx" type="effect" desc="Makey Makey MIDI Notes Monitor">
       <metadata>
+        <link rel="screenshot">https://youtu.be/Co3ttlSlMlY</link>
         <link rel="donation">http://www.extremraym.com/en/donation</link>
       </metadata>
       <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
@@ -41,6 +44,7 @@
     </reapack>
     <reapack name="X-Raym_Makey Makey MIDI Notes Velocity.jsfx" type="effect" desc="Makey Makey MIDI Notes Velocity">
       <metadata>
+        <link rel="screenshot">https://youtu.be/Co3ttlSlMlY</link>
         <link rel="donation">http://www.extremraym.com/en/donation</link>
       </metadata>
       <version name="1.0" author="X-Raym" time="2016-09-04T11:41:02Z">
