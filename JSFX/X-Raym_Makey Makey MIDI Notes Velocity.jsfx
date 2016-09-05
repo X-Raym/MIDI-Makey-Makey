@@ -14,11 +14,13 @@
  * Licence: GPL v3
  * REAPER: 5.0
  * Extensions: None
- * Version: 1.0
+ * Version: 1.0.1
  */
 
 /**
  * Changelog:
+ * v1.0.1 (2016-09-05)
+  # Bug fix
  * v1.0 (2016-09-02)
   + Initial Release
  */
@@ -96,7 +98,7 @@ while
     (
      
       // Is it a note event?
-      status == statNoteOn ? ||  status == statNoteOff ?
+      status == statNoteOn ||  status == statNoteOff ?
       (
 
         // If note is in Makey Makey MIDI Range

@@ -12,11 +12,13 @@
  * Licence: GPL v3
  * REAPER: 5.0
  * Extensions: None
- * Version: 1.0
+ * Version: 1.0.1
  */
 
 /**
  * Changelog:
+ * v1.0.1 (2016-09-02)
+  # Prevent double note off events
  * v1.0 (2016-09-02)
   + Initial Release
  */
@@ -104,7 +106,7 @@ while
         note >= 60 && note <= 77   ? (
 
           note = slider( slider_dest[note] ); // Get Note Out
-
+        /*
           note_buf[note] ? ( // If Note already in buffer, stop it. Prevent note hang if Stop after tranposing while note playing.
             midisend(offset, statNoteOff | channel, note);
             note_buf[note] =  0;
@@ -115,6 +117,8 @@ while
           ):(
             note_buf[note] =  0;
           );
+
+        */  
 
         );
      
