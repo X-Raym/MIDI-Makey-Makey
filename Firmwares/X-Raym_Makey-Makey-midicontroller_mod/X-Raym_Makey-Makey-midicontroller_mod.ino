@@ -89,6 +89,7 @@ void loop() {
     (pinState[i]) = (digitalRead(pinNumbers[i])); // get current pin states
 
     if (pinChange[i]!= (pinState[i]) ) {
+     int msg = 0;
       if ( pinState[i] == 0 ) {
         msg = 0x90;
        } else {
